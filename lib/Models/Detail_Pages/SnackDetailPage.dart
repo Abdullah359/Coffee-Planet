@@ -3,12 +3,38 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+<<<<<<< HEAD
 class SnackDetail extends StatelessWidget {
+=======
+class SnackDetail extends StatefulWidget {
+>>>>>>> 885cf50 (first commit)
   final SnackDataModel snackDataModel;
 
   const SnackDetail({super.key, required this.snackDataModel});
 
   @override
+<<<<<<< HEAD
+=======
+  State<SnackDetail> createState() => _SnackDetailState();
+}
+
+class _SnackDetailState extends State<SnackDetail> {
+  int _counter = 1;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
+  @override
+>>>>>>> 885cf50 (first commit)
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -18,7 +44,12 @@ class SnackDetail extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 height: 350,
+<<<<<<< HEAD
                 child: Image.asset(snackDataModel.imageUrl, fit: BoxFit.cover),
+=======
+                child: Image.asset(widget.snackDataModel.imageUrl,
+                    fit: BoxFit.cover),
+>>>>>>> 885cf50 (first commit)
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -26,7 +57,11 @@ class SnackDetail extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
+<<<<<<< HEAD
                         snackDataModel.name,
+=======
+                        widget.snackDataModel.name,
+>>>>>>> 885cf50 (first commit)
                         style: GoogleFonts.poppins(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
@@ -34,7 +69,11 @@ class SnackDetail extends StatelessWidget {
                         ),
                       ),
                       Text(
+<<<<<<< HEAD
                         snackDataModel.price,
+=======
+                        widget.snackDataModel.price,
+>>>>>>> 885cf50 (first commit)
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -61,7 +100,11 @@ class SnackDetail extends StatelessWidget {
                   right: 15,
                 ),
                 child: Text(
+<<<<<<< HEAD
                   snackDataModel.desc,
+=======
+                  widget.snackDataModel.desc,
+>>>>>>> 885cf50 (first commit)
                   style: GoogleFonts.poppins(
                     fontSize: 12,
                     fontWeight: FontWeight.w200,
@@ -90,12 +133,22 @@ class SnackDetail extends StatelessWidget {
                               children: [
                                 IconButton(
                                   splashColor: Colors.transparent,
+<<<<<<< HEAD
                                   onPressed: () {},
+=======
+                                  onPressed: () {
+                                    _counter > 1 ? _decrementCounter() : null;
+                                  },
+>>>>>>> 885cf50 (first commit)
                                   icon: FaIcon(FontAwesomeIcons.minus,
                                       color: Colors.black, size: 15),
                                 ),
                                 Text(
+<<<<<<< HEAD
                                   '1',
+=======
+                                  _counter.toString(),
+>>>>>>> 885cf50 (first commit)
                                   style: GoogleFonts.poppins(
                                     color: Colors.black,
                                     fontSize: 15,
@@ -104,7 +157,15 @@ class SnackDetail extends StatelessWidget {
                                 ),
                                 IconButton(
                                   splashColor: Colors.transparent,
+<<<<<<< HEAD
                                   onPressed: () {},
+=======
+                                  onPressed: () {
+                                    _counter >= 1 && _counter < 9
+                                        ? _incrementCounter()
+                                        : null;
+                                  },
+>>>>>>> 885cf50 (first commit)
                                   icon: FaIcon(
                                     FontAwesomeIcons.plus,
                                     color: Colors.black,

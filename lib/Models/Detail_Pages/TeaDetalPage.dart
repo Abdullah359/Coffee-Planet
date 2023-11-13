@@ -3,10 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TeaDetail extends StatelessWidget {
+class TeaDetail extends StatefulWidget {
   final TeaDataModel teaDataModel;
 
   const TeaDetail({super.key, required this.teaDataModel});
+
+  @override
+  State<TeaDetail> createState() => _TeaDetailState();
+}
+
+class _TeaDetailState extends State<TeaDetail> {
+  int _counter = 1;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +37,8 @@ class TeaDetail extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 height: 350,
-                child: Image.asset(teaDataModel.imageUrl, fit: BoxFit.cover),
+                child: Image.asset(widget.teaDataModel.imageUrl,
+                    fit: BoxFit.cover),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -26,7 +46,7 @@ class TeaDetail extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        teaDataModel.name,
+                        widget.teaDataModel.name,
                         style: GoogleFonts.poppins(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
@@ -34,7 +54,7 @@ class TeaDetail extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        teaDataModel.price,
+                        widget.teaDataModel.price,
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -61,7 +81,7 @@ class TeaDetail extends StatelessWidget {
                   right: 15,
                 ),
                 child: Text(
-                  teaDataModel.desc,
+                  widget.teaDataModel.desc,
                   style: GoogleFonts.poppins(
                     fontSize: 12,
                     fontWeight: FontWeight.w200,
@@ -90,12 +110,14 @@ class TeaDetail extends StatelessWidget {
                               children: [
                                 IconButton(
                                   splashColor: Colors.transparent,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    _counter > 1 ? _decrementCounter() : null;
+                                  },
                                   icon: FaIcon(FontAwesomeIcons.minus,
                                       color: Colors.black, size: 15),
                                 ),
                                 Text(
-                                  '1',
+                                  _counter.toString(),
                                   style: GoogleFonts.poppins(
                                     color: Colors.black,
                                     fontSize: 15,
@@ -104,7 +126,11 @@ class TeaDetail extends StatelessWidget {
                                 ),
                                 IconButton(
                                   splashColor: Colors.transparent,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    _counter >= 1 && _counter < 9
+                                        ? _incrementCounter()
+                                        : null;
+                                  },
                                   icon: FaIcon(
                                     FontAwesomeIcons.plus,
                                     color: Colors.black,

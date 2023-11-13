@@ -56,7 +56,7 @@ class UserPage extends StatelessWidget {
                   height: 8,
                 ),
                 Text(
-                  name.length > 10
+                  name.length > 12
                       ? '${splitted[0] + " " + splitted[1][0].toString()}'
                       : name,
                   style: GoogleFonts.poppins(
