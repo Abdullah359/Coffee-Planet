@@ -31,8 +31,8 @@ class HomePage extends StatelessWidget {
     coffeeName.length,
     (index) => CoffeeDataModel(
       coffeeName[index],
-      '22',
       coffeeImages[index],
+      '22',
       'Description of Coffee',
     ),
   );
@@ -60,8 +60,8 @@ class HomePage extends StatelessWidget {
     (index) => TeaDataModel(
       teaName[index],
       teaImages[index],
-      '${teaName[index]}22',
-      '${teaName[index]}Description of Tea',
+      '22',
+      'Description of Tea',
     ),
   );
 
@@ -87,9 +87,9 @@ class HomePage extends StatelessWidget {
     snacksName.length,
     (index) => SnackDataModel(
       snacksName[index],
-      "${snacksName[index]}22",
       snacksImages[index],
-      '${snacksName[index]}Description of Snacks',
+      '22',
+      'Description of Snacks',
     ),
   );
 
@@ -148,26 +148,29 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              TabBar(
-                  physics: NeverScrollableScrollPhysics(),
-                  indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Color(0xffa75e44),
-                  ),
-                  labelColor: Colors.white,
-                  unselectedLabelColor: Colors.black,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  tabs: [
-                    TabsWidget(
-                      title: 'Coffee',
+              Theme(
+                data: ThemeData(splashColor: Colors.transparent),
+                child: TabBar(
+                    physics: NeverScrollableScrollPhysics(),
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Color(0xffa75e44),
                     ),
-                    TabsWidget(
-                      title: 'Tea',
-                    ),
-                    TabsWidget(
-                      title: 'Snack',
-                    ),
-                  ]),
+                    labelColor: Colors.white,
+                    unselectedLabelColor: Colors.black,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    tabs: [
+                      TabsWidget(
+                        title: 'Coffee',
+                      ),
+                      TabsWidget(
+                        title: 'Tea',
+                      ),
+                      TabsWidget(
+                        title: 'Snack',
+                      ),
+                    ]),
+              ),
               SizedBox(height: 20),
               Expanded(
                 child: TabBarView(children: [

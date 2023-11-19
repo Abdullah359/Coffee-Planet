@@ -55,7 +55,7 @@ class _NavigationPageState extends State<NavigationPage> {
                       color: Color(0xffa75e44), size: 22),
                   icon: FaIcon(FontAwesomeIcons.solidBell,
                       color: Colors.brown.shade200, size: 22),
-                  label: 'Notify',
+                  label: 'Notification',
                 ),
                 NavigationDestination(
                   selectedIcon: FaIcon(FontAwesomeIcons.solidUser,

@@ -3,38 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-<<<<<<< HEAD
-class SnackDetail extends StatelessWidget {
-=======
 class SnackDetail extends StatefulWidget {
->>>>>>> 885cf50 (first commit)
   final SnackDataModel snackDataModel;
 
   const SnackDetail({super.key, required this.snackDataModel});
 
   @override
-<<<<<<< HEAD
-=======
   State<SnackDetail> createState() => _SnackDetailState();
 }
 
 class _SnackDetailState extends State<SnackDetail> {
-  int _counter = 1;
+  int _count = 1;
 
-  void _incrementCounter() {
+  void _incrementCount() {
     setState(() {
-      _counter++;
+      _count ++;
     });
   }
 
-  void _decrementCounter() {
+  void _decrementCount() {
     setState(() {
-      _counter--;
+      _count --;
     });
   }
 
   @override
->>>>>>> 885cf50 (first commit)
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -44,12 +37,8 @@ class _SnackDetailState extends State<SnackDetail> {
               SizedBox(
                 width: double.infinity,
                 height: 350,
-<<<<<<< HEAD
-                child: Image.asset(snackDataModel.imageUrl, fit: BoxFit.cover),
-=======
-                child: Image.asset(widget.snackDataModel.imageUrl,
-                    fit: BoxFit.cover),
->>>>>>> 885cf50 (first commit)
+                child: Image.asset(
+                    widget.snackDataModel.imageUrl, fit: BoxFit.cover),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -57,11 +46,7 @@ class _SnackDetailState extends State<SnackDetail> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-<<<<<<< HEAD
-                        snackDataModel.name,
-=======
                         widget.snackDataModel.name,
->>>>>>> 885cf50 (first commit)
                         style: GoogleFonts.poppins(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
@@ -69,11 +54,7 @@ class _SnackDetailState extends State<SnackDetail> {
                         ),
                       ),
                       Text(
-<<<<<<< HEAD
-                        snackDataModel.price,
-=======
                         widget.snackDataModel.price,
->>>>>>> 885cf50 (first commit)
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -100,11 +81,7 @@ class _SnackDetailState extends State<SnackDetail> {
                   right: 15,
                 ),
                 child: Text(
-<<<<<<< HEAD
-                  snackDataModel.desc,
-=======
                   widget.snackDataModel.desc,
->>>>>>> 885cf50 (first commit)
                   style: GoogleFonts.poppins(
                     fontSize: 12,
                     fontWeight: FontWeight.w200,
@@ -133,22 +110,14 @@ class _SnackDetailState extends State<SnackDetail> {
                               children: [
                                 IconButton(
                                   splashColor: Colors.transparent,
-<<<<<<< HEAD
-                                  onPressed: () {},
-=======
                                   onPressed: () {
-                                    _counter > 1 ? _decrementCounter() : null;
+                                    _count > 1 ? _decrementCount() : null;
                                   },
->>>>>>> 885cf50 (first commit)
                                   icon: FaIcon(FontAwesomeIcons.minus,
                                       color: Colors.black, size: 15),
                                 ),
                                 Text(
-<<<<<<< HEAD
-                                  '1',
-=======
-                                  _counter.toString(),
->>>>>>> 885cf50 (first commit)
+                                  _count.toString(),
                                   style: GoogleFonts.poppins(
                                     color: Colors.black,
                                     fontSize: 15,
@@ -157,15 +126,11 @@ class _SnackDetailState extends State<SnackDetail> {
                                 ),
                                 IconButton(
                                   splashColor: Colors.transparent,
-<<<<<<< HEAD
-                                  onPressed: () {},
-=======
                                   onPressed: () {
-                                    _counter >= 1 && _counter < 9
-                                        ? _incrementCounter()
+                                    _count >= 1 && _count < 9
+                                        ? _incrementCount()
                                         : null;
                                   },
->>>>>>> 885cf50 (first commit)
                                   icon: FaIcon(
                                     FontAwesomeIcons.plus,
                                     color: Colors.black,

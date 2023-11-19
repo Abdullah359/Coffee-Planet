@@ -3,38 +3,31 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-<<<<<<< HEAD
-class CoffeeDetail extends StatelessWidget {
-=======
 class CoffeeDetail extends StatefulWidget {
->>>>>>> 885cf50 (first commit)
   final CoffeeDataModel coffeeDataModel;
 
   const CoffeeDetail({super.key, required this.coffeeDataModel});
 
   @override
-<<<<<<< HEAD
-=======
   State<CoffeeDetail> createState() => _CoffeeDetailState();
 }
 
 class _CoffeeDetailState extends State<CoffeeDetail> {
-  int _counter = 1;
+  int _count = 1;
 
-  void _incrementCounter() {
+  void _incrementCount() {
     setState(() {
-      _counter++;
+      _count++;
     });
   }
 
-  void _decrementCounter() {
+  void _decrementCount() {
     setState(() {
-      _counter--;
+      _count--;
     });
   }
 
   @override
->>>>>>> 885cf50 (first commit)
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -44,12 +37,8 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
               SizedBox(
                 width: double.infinity,
                 height: 350,
-<<<<<<< HEAD
-                child: Image.asset(coffeeDataModel.imageUrl, fit: BoxFit.cover),
-=======
                 child: Image.asset(widget.coffeeDataModel.imageUrl,
                     fit: BoxFit.cover),
->>>>>>> 885cf50 (first commit)
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -57,11 +46,7 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-<<<<<<< HEAD
-                        coffeeDataModel.name,
-=======
                         widget.coffeeDataModel.name,
->>>>>>> 885cf50 (first commit)
                         style: GoogleFonts.poppins(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
@@ -69,11 +54,7 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                         ),
                       ),
                       Text(
-<<<<<<< HEAD
-                        coffeeDataModel.price,
-=======
                         widget.coffeeDataModel.price,
->>>>>>> 885cf50 (first commit)
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -100,11 +81,7 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                   right: 15,
                 ),
                 child: Text(
-<<<<<<< HEAD
-                  coffeeDataModel.desc,
-=======
                   widget.coffeeDataModel.desc,
->>>>>>> 885cf50 (first commit)
                   style: GoogleFonts.poppins(
                     fontSize: 12,
                     fontWeight: FontWeight.w200,
@@ -142,11 +119,7 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
-<<<<<<< HEAD
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-=======
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
->>>>>>> 885cf50 (first commit)
                     children: [
                       Container(
                         height: 40,
@@ -162,22 +135,14 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                               children: [
                                 IconButton(
                                   splashColor: Colors.transparent,
-<<<<<<< HEAD
-                                  onPressed: () {},
-=======
                                   onPressed: () {
-                                    _counter > 1 ? _decrementCounter() : null;
+                                    _count > 1 ? _decrementCount() : null;
                                   },
->>>>>>> 885cf50 (first commit)
                                   icon: FaIcon(FontAwesomeIcons.minus,
                                       color: Colors.black, size: 15),
                                 ),
                                 Text(
-<<<<<<< HEAD
-                                  '1',
-=======
-                                  _counter.toString(),
->>>>>>> 885cf50 (first commit)
+                                  _count.toString(),
                                   style: GoogleFonts.poppins(
                                     color: Colors.black,
                                     fontSize: 15,
@@ -186,15 +151,11 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                                 ),
                                 IconButton(
                                   splashColor: Colors.transparent,
-<<<<<<< HEAD
-                                  onPressed: () {},
-=======
                                   onPressed: () {
-                                    _counter >= 1 && _counter < 9
-                                        ? _incrementCounter()
+                                    _count >= 1 && _count < 9
+                                        ? _incrementCount()
                                         : null;
                                   },
->>>>>>> 885cf50 (first commit)
                                   icon: FaIcon(
                                     FontAwesomeIcons.plus,
                                     color: Colors.black,

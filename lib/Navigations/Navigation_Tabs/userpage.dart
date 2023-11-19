@@ -1,3 +1,4 @@
+import 'package:coffeeplanet/Login_Signup/signuppage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -95,7 +96,14 @@ class UserPage extends StatelessWidget {
                     icon: FontAwesomeIcons.rightFromBracket,
                     endIcon: false,
                     textColor: Colors.red,
-                    onPress: () {}),
+                    onPress: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignupPage(),
+                          ),
+                          (_) => false);
+                    }),
               ]),
             ),
           ),
