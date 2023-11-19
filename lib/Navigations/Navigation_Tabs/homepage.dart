@@ -19,27 +19,22 @@ class HomePage extends StatelessWidget {
   ];
 
   static List<String> coffeeImages = [
-    "assets/images/coffee_images/cappuccino.jpg",
-    "assets/images/coffee_images/coffee.jpg",
-    "assets/images/coffee_images/black_coffee.jpg",
-    "assets/images/coffee_images/iced_coffee.jpg",
-    "assets/images/coffee_images/chocolate_coffee.jpg",
-    "assets/images/coffee_images/espresso.jpg",
+    "assets/images/coffee_images/cappuccino.png",
+    "assets/images/coffee_images/coffee.png",
+    "assets/images/coffee_images/black_coffee.png",
+    "assets/images/coffee_images/iced_coffee.png",
+    "assets/images/coffee_images/chocolate_coffee.png",
+    "assets/images/coffee_images/espresso.png",
   ];
 
   final List<CoffeeDataModel> coffeeData = List.generate(
     coffeeName.length,
     (index) => CoffeeDataModel(
-        coffeeName[index],
-        coffeeImages[index],
-        '22.00',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim veniam, quis nostrud '
-            'exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum '
-            'dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non '
-            'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
+      coffeeName[index],
+      '22',
+      coffeeImages[index],
+      'Description of Coffee',
+    ),
   );
 
   static List<String> teaName = [
@@ -52,28 +47,22 @@ class HomePage extends StatelessWidget {
   ];
 
   static List<String> teaImages = [
-    "assets/images/tea_images/black_tea.jpg",
-    "assets/images/tea_images/green_tea.jpg",
-    "assets/images/tea_images/herbal_tea.jpg",
-    "assets/images/tea_images/milk_tea.jpg",
-    "assets/images/tea_images/pink_tea.jpg",
-    "assets/images/tea_images/white_tea.jpg",
+    "assets/images/tea_images/black_tea.png",
+    "assets/images/tea_images/green_tea.png",
+    "assets/images/tea_images/herbal_tea.png",
+    "assets/images/tea_images/milk_tea.png",
+    "assets/images/tea_images/pink_tea.png",
+    "assets/images/tea_images/white_tea.png",
   ];
 
   final List<TeaDataModel> teaData = List.generate(
     teaName.length,
     (index) => TeaDataModel(
-        teaName[index],
-        teaImages[index],
-        '22.00',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim veniam, quis nostrud '
-            'exercitation ullamco laboris nisi ut aliquip ex ea commodo '
-            'consequat. Duis aute irure dolor in reprehenderit in voluptate '
-            'velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint '
-            'occaecat cupidatat non proident, sunt in culpa qui officia deserunt '
-            'mollit anim id est laborum.'),
+      teaName[index],
+      teaImages[index],
+      '${teaName[index]}22',
+      '${teaName[index]}Description of Tea',
+    ),
   );
 
   static List<String> snacksName = [
@@ -82,32 +71,26 @@ class HomePage extends StatelessWidget {
     "Cupcakes",
     "Donuts",
     "French Cosine",
-    "Macarons"
+    "Macaroons"
   ];
 
   static List<String> snacksImages = [
-    "assets/images/snacks_images/bread_image.jpg",
-    "assets/images/snacks_images/cookie_image.jpg",
-    "assets/images/snacks_images/cupcake.jpg",
-    "assets/images/snacks_images/donut_image.jpg",
-    "assets/images/snacks_images/french_cosine.jpg",
-    "assets/images/snacks_images/macarons_image.jpg",
+    "assets/images/snacks_images/bread.png",
+    "assets/images/snacks_images/chocolate_cookies.png",
+    "assets/images/snacks_images/cupcakes.png",
+    "assets/images/snacks_images/donuts.png",
+    "assets/images/snacks_images/french_cuisine.png",
+    "assets/images/snacks_images/macaroons.png",
   ];
 
   final List<SnackDataModel> snacksData = List.generate(
     snacksName.length,
     (index) => SnackDataModel(
-        snacksName[index],
-        snacksImages[index],
-        '22.00',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-            'sed do eiusmod tempor incididunt ut labore et dolore '
-            'magna aliqua. Ut enim ad minim veniam, quis nostrud '
-            'exercitation ullamco laboris nisi ut aliquip ex ea commodo '
-            'consequat. Duis aute irure dolor in reprehenderit in voluptate '
-            'velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint '
-            'occaecat cupidatat non proident, sunt in culpa qui officia deserunt '
-            'mollit anim id est laborum.'),
+      snacksName[index],
+      "${snacksName[index]}22",
+      snacksImages[index],
+      '${snacksName[index]}Description of Snacks',
+    ),
   );
 
   @override
@@ -189,10 +172,10 @@ class HomePage extends StatelessWidget {
               Expanded(
                 child: TabBarView(children: [
                   ListView.builder(
-                      itemCount: coffeeData.length,
                       scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
                       physics: BouncingScrollPhysics(),
+                      itemCount: coffeeData.length,
+                      shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return SizedBox(
                           height: 100,
@@ -206,12 +189,8 @@ class HomePage extends StatelessWidget {
                                 leading: SizedBox(
                                   height: 90,
                                   width: 60,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(5),
-                                    child: Image.asset(
-                                        coffeeData[index].imageUrl,
-                                        fit: BoxFit.cover),
-                                  ),
+                                  child: Image.asset(coffeeData[index].imageUrl,
+                                      fit: BoxFit.cover),
                                 ),
                                 title: Text(
                                   coffeeData[index].name,
@@ -263,11 +242,8 @@ class HomePage extends StatelessWidget {
                                 leading: SizedBox(
                                   height: 90,
                                   width: 60,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(5),
-                                    child: Image.asset(teaData[index].imageUrl,
-                                        fit: BoxFit.cover),
-                                  ),
+                                  child: Image.asset(teaData[index].imageUrl,
+                                      fit: BoxFit.cover),
                                 ),
                                 title: Text(
                                   teaData[index].name,
@@ -319,12 +295,8 @@ class HomePage extends StatelessWidget {
                                 leading: SizedBox(
                                   height: 90,
                                   width: 60,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(5),
-                                    child: Image.asset(
-                                        snacksData[index].imageUrl,
-                                        fit: BoxFit.cover),
-                                  ),
+                                  child: Image.asset(snacksData[index].imageUrl,
+                                      fit: BoxFit.cover),
                                 ),
                                 title: Text(
                                   snacksData[index].name,
