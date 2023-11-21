@@ -14,6 +14,12 @@ class NavigationPage extends StatefulWidget {
 
 class _NavigationPageState extends State<NavigationPage> {
   int currentPageIndex = 0;
+  static List kPages = [
+    HomePage(),
+    CartPage(),
+    NotifyPage(),
+    UserPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -67,12 +73,7 @@ class _NavigationPageState extends State<NavigationPage> {
               ]),
         ),
       ),
-      body: [
-        HomePage(),
-        CartPage(),
-        NotifyPage(),
-        UserPage(),
-      ][currentPageIndex],
+      body: kPages[currentPageIndex],
     );
   }
 }
