@@ -89,11 +89,13 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Flexible(
-                child: TabBarView(children: [
-                  CoffeeDataBuilder(),
-                  TeaDataBuilder(),
-                  SnacksDataBuilder(),
-                ]),
+                child: TabBarView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    children: [
+                      CoffeeDataBuilder(),
+                      TeaDataBuilder(),
+                      SnacksDataBuilder(),
+                    ]),
               ),
             ]),
           ),
