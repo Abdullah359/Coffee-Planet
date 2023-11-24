@@ -2,6 +2,7 @@ import 'package:coffeeplanet/Models/Data_Models/ProductDataModels.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../main.dart';
 
 class CoffeeDetail extends StatefulWidget {
   final CoffeeDataModel coffeeDataModel;
@@ -13,14 +14,39 @@ class CoffeeDetail extends StatefulWidget {
 }
 
 class _CoffeeDetailState extends State<CoffeeDetail> {
+  // Add to Cart
+  void _addCart() {
+    Navigator.pop(context);
+    ScaffoldMessenger.of(GlobalContextService.navigatorKey.currentContext!)
+        .showSnackBar(
+      const SnackBar(
+        duration: Duration(seconds: 1),
+        content: Text("Added to Cart Successfully!"),
+      ),
+    );
+  }
+
+  // Size Cell count
+  int _sizeCount = 0;
+
+  // Size's List
+  final List<String> cellSizes = [
+    'Small',
+    'Medium',
+    'Large',
+  ];
+
+  // Item initial value
   int _count = 1;
 
+  // Increment Function
   void _incrementCount() {
     setState(() {
       _count++;
     });
   }
 
+  // Decrement Function
   void _decrementCount() {
     setState(() {
       _count--;
@@ -58,13 +84,13 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: Color(0xffa75e44),
+                          color: const Color(0xffa75e44),
                           height: 2.5,
                         ),
                       ),
                     ]),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -88,38 +114,45 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CoffeeSizeCell(
-                          cellColor: Color(0xffa75e44),
-                          title: 'Small',
-                          titleColor: Colors.white,
-                          onPress: () {}),
-                      CoffeeSizeCell(
-                          cellColor: Colors.white,
-                          title: 'Medium',
-                          titleColor: Colors.black,
-                          onPress: () {}),
-                      CoffeeSizeCell(
-                          cellColor: Colors.white,
-                          title: 'Large',
-                          titleColor: Colors.black,
-                          onPress: () {}),
-                    ]),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                child: SizedBox(
+                  height: 60,
+                  child: ListView.builder(
+                      itemCount: cellSizes.length,
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (ctx, index) {
+                        return CoffeeSizeCell(
+                          title: cellSizes[index],
+                          borders: _sizeCount == index
+                              ? Border.all(style: BorderStyle.none)
+                              : Border.all(color: Colors.grey.shade300),
+                          cellColor: _sizeCount == index
+                              ? const Color(0xffa75e44)
+                              : Colors.white,
+                          titleColor:
+                              _sizeCount == index ? Colors.white : Colors.black,
+                          onPress: () {
+                            setState(() {
+                              _sizeCount = index;
+                            });
+                          },
+                        );
+                      }),
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
                         height: 40,
@@ -131,14 +164,14 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                         ),
                         child: Center(
                           child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
                                   splashColor: Colors.transparent,
                                   onPressed: () {
                                     _count > 1 ? _decrementCount() : null;
                                   },
-                                  icon: FaIcon(FontAwesomeIcons.minus,
+                                  icon: const FaIcon(FontAwesomeIcons.minus,
                                       color: Colors.black, size: 15),
                                 ),
                                 Text(
@@ -156,7 +189,7 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                                         ? _incrementCount()
                                         : null;
                                   },
-                                  icon: FaIcon(
+                                  icon: const FaIcon(
                                     FontAwesomeIcons.plus,
                                     color: Colors.black,
                                     size: 15,
@@ -165,21 +198,16 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                               ]),
                         ),
                       ),
-                      InkWell(
+                      GestureDetector(
                         onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              duration: Duration(seconds: 1),
-                              content: Text("Added to Cart Successfully!"),
-                            ),
-                          );
+                          _addCart();
                         },
                         child: Container(
                           height: 40,
                           width: 120,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Color(0xffa75e44),
+                            color: const Color(0xffa75e44),
                           ),
                           child: Center(
                             child: Text(
@@ -233,30 +261,33 @@ class CoffeeSizeCell extends StatelessWidget {
     required this.title,
     required this.titleColor,
     required this.onPress,
+    required this.borders,
   });
 
   final Color cellColor;
   final String title;
   final Color titleColor;
-  final VoidCallback onPress;
+  final void Function()? onPress;
+  final BoxBorder borders;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onPress,
       child: Container(
         height: 40,
-        width: 90,
+        width: 80,
+        margin: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           color: cellColor,
-          border: Border.all(color: Colors.grey),
+          border: borders,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Center(
           child: Text(
             title,
             style: GoogleFonts.poppins(
-                color: titleColor, fontSize: 15, fontWeight: FontWeight.w500),
+                color: titleColor, fontSize: 14, fontWeight: FontWeight.w500),
           ),
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:coffeeplanet/Models/Data_Models/ProductDataModels.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../main.dart';
 
 class SnackDetail extends StatefulWidget {
   final SnackDataModel snackDataModel;
@@ -13,17 +14,30 @@ class SnackDetail extends StatefulWidget {
 }
 
 class _SnackDetailState extends State<SnackDetail> {
+  // Add to Cart
+  void _addCart() {
+    Navigator.pop(context);
+    ScaffoldMessenger.of(GlobalContextService.navigatorKey.currentContext!)
+        .showSnackBar(
+      const SnackBar(
+        duration: Duration(seconds: 1),
+        content: Text("Added to Cart Successfully!"),
+      ),
+    );
+  }
+
+  // Item initial value
   int _count = 1;
 
   void _incrementCount() {
     setState(() {
-      _count ++;
+      _count++;
     });
   }
 
   void _decrementCount() {
     setState(() {
-      _count --;
+      _count--;
     });
   }
 
@@ -37,8 +51,8 @@ class _SnackDetailState extends State<SnackDetail> {
               SizedBox(
                 width: double.infinity,
                 height: 350,
-                child: Image.asset(
-                    widget.snackDataModel.imageUrl, fit: BoxFit.cover),
+                child: Image.asset(widget.snackDataModel.imageUrl,
+                    fit: BoxFit.cover),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -140,14 +154,9 @@ class _SnackDetailState extends State<SnackDetail> {
                               ]),
                         ),
                       ),
-                      InkWell(
+                      GestureDetector(
                         onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              duration: Duration(seconds: 1),
-                              content: Text("Added to Cart Successfully!"),
-                            ),
-                          );
+                          _addCart();
                         },
                         child: Container(
                           height: 40,

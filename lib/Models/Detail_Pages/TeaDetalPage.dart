@@ -2,6 +2,7 @@ import 'package:coffeeplanet/Models/Data_Models/ProductDataModels.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../main.dart';
 
 class TeaDetail extends StatefulWidget {
   final TeaDataModel teaDataModel;
@@ -13,6 +14,19 @@ class TeaDetail extends StatefulWidget {
 }
 
 class _TeaDetailState extends State<TeaDetail> {
+  // Add to Cart
+  void _addCart() {
+    Navigator.pop(context);
+    ScaffoldMessenger.of(GlobalContextService.navigatorKey.currentContext!)
+        .showSnackBar(
+      const SnackBar(
+        duration: Duration(seconds: 1),
+        content: Text("Added to Cart Successfully!"),
+      ),
+    );
+  }
+
+  // Item initial value
   int _counter = 1;
 
   void _incrementCounter() {
@@ -58,13 +72,13 @@ class _TeaDetailState extends State<TeaDetail> {
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: Color(0xffa75e44),
+                          color: const Color(0xffa75e44),
                           height: 2.5,
                         ),
                       ),
                     ]),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -88,11 +102,11 @@ class _TeaDetailState extends State<TeaDetail> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -113,7 +127,7 @@ class _TeaDetailState extends State<TeaDetail> {
                                   onPressed: () {
                                     _counter > 1 ? _decrementCounter() : null;
                                   },
-                                  icon: FaIcon(FontAwesomeIcons.minus,
+                                  icon: const FaIcon(FontAwesomeIcons.minus,
                                       color: Colors.black, size: 15),
                                 ),
                                 Text(
@@ -131,7 +145,7 @@ class _TeaDetailState extends State<TeaDetail> {
                                         ? _incrementCounter()
                                         : null;
                                   },
-                                  icon: FaIcon(
+                                  icon: const FaIcon(
                                     FontAwesomeIcons.plus,
                                     color: Colors.black,
                                     size: 15,
@@ -142,19 +156,14 @@ class _TeaDetailState extends State<TeaDetail> {
                       ),
                       InkWell(
                         onTap: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              duration: Duration(seconds: 1),
-                              content: Text("Added to Cart Successfully!"),
-                            ),
-                          );
+                          _addCart();
                         },
                         child: Container(
                           height: 40,
                           width: 120,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Color(0xffa75e44),
+                            color: const Color(0xffa75e44),
                           ),
                           child: Center(
                             child: Text(

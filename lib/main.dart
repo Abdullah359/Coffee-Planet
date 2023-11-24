@@ -12,6 +12,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: GlobalContextService.navigatorKey,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: EasySplashScreen(
@@ -24,4 +25,8 @@ class SplashScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class GlobalContextService {
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 }

@@ -14,7 +14,7 @@ class NavigationPage extends StatefulWidget {
 
 class _NavigationPageState extends State<NavigationPage> {
   int currentPageIndex = 0;
-  static List kPages = [
+  static const List kPages = [
     HomePage(),
     CartPage(),
     NotifyPage(),
@@ -30,7 +30,7 @@ class _NavigationPageState extends State<NavigationPage> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
           child: NavigationBar(
-              backgroundColor: Color(0xffe8e8e8),
+              backgroundColor: const Color(0xffe8e8e8),
               height: 65,
               elevation: 10,
               labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
@@ -43,28 +43,28 @@ class _NavigationPageState extends State<NavigationPage> {
               selectedIndex: currentPageIndex,
               destinations: [
                 NavigationDestination(
-                  selectedIcon: Icon(FontAwesomeIcons.house,
+                  selectedIcon: const FaIcon(FontAwesomeIcons.house,
                       color: Color(0xffa75e44), size: 22),
                   icon: Icon(FontAwesomeIcons.house,
                       color: Colors.brown.shade200, size: 22),
                   label: 'Home',
                 ),
                 NavigationDestination(
-                  selectedIcon: FaIcon(FontAwesomeIcons.cartShopping,
+                  selectedIcon: const FaIcon(FontAwesomeIcons.cartShopping,
                       color: Color(0xffa74e44), size: 22),
                   icon: FaIcon(FontAwesomeIcons.cartShopping,
                       color: Colors.brown.shade200, size: 22),
                   label: 'Cart',
                 ),
                 NavigationDestination(
-                  selectedIcon: FaIcon(FontAwesomeIcons.solidBell,
+                  selectedIcon: const FaIcon(FontAwesomeIcons.solidBell,
                       color: Color(0xffa75e44), size: 22),
                   icon: FaIcon(FontAwesomeIcons.solidBell,
                       color: Colors.brown.shade200, size: 22),
                   label: 'Notification',
                 ),
                 NavigationDestination(
-                  selectedIcon: FaIcon(FontAwesomeIcons.solidUser,
+                  selectedIcon: const FaIcon(FontAwesomeIcons.solidUser,
                       color: Color(0xffa75e44), size: 22),
                   icon: FaIcon(FontAwesomeIcons.solidUser,
                       color: Colors.brown.shade200, size: 22),
