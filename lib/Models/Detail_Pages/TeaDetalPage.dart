@@ -68,7 +68,7 @@ class _TeaDetailState extends State<TeaDetail> {
                         ),
                       ),
                       Text(
-                        widget.teaDataModel.price,
+                        '\$${widget.teaDataModel.price}',
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,

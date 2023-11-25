@@ -25,13 +25,31 @@ class SnacksDataBuilder extends StatelessWidget {
     "assets/images/snacks_images/macaroons.png",
   ];
 
+  static List<String> snacksPrice = [
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+  ];
+
+  static List<String> snacksDesc = [
+    "Description of Snacks",
+    "Description of Snacks",
+    "Description of Snacks",
+    "Description of Snacks",
+    "Description of Snacks",
+    "Description of Snacks",
+  ];
+
   final List<SnackDataModel> snacksData = List.generate(
     snacksName.length,
     (index) => SnackDataModel(
       snacksName[index],
       snacksImages[index],
-      '22',
-      'Description of Snacks',
+      snacksPrice[index],
+      snacksDesc[index],
     ),
   );
 
@@ -57,7 +75,7 @@ class SnacksDataBuilder extends StatelessWidget {
           return DataListTile(
               imageURL: snacksData[index].imageUrl,
               title: snacksData[index].name,
-              price: snacksData[index].price,
+              price: '\$${snacksData[index].price}',
               addCartOnTap: () {
                 _addCart();
               },

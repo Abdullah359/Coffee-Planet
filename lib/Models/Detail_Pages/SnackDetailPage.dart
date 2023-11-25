@@ -68,7 +68,7 @@ class _SnackDetailState extends State<SnackDetail> {
                         ),
                       ),
                       Text(
-                        widget.snackDataModel.price,
+                        '\$${widget.snackDataModel.price}',
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,

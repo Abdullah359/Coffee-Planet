@@ -25,13 +25,31 @@ class TeaDataBuilder extends StatelessWidget {
     "assets/images/tea_images/white_tea.png",
   ];
 
+  static List<String> teaPrice = [
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+  ];
+
+  static List<String> teaDesc = [
+    'Description of Tea',
+    'Description of Tea',
+    'Description of Tea',
+    'Description of Tea',
+    'Description of Tea',
+    'Description of Tea',
+  ];
+
   final List<TeaDataModel> teaData = List.generate(
     teaName.length,
     (index) => TeaDataModel(
       teaName[index],
       teaImages[index],
-      '22',
-      'Description of Tea',
+      teaPrice[index],
+      teaDesc[index],
     ),
   );
 
@@ -57,7 +75,7 @@ class TeaDataBuilder extends StatelessWidget {
           return DataListTile(
               imageURL: teaData[index].imageUrl,
               title: teaData[index].name,
-              price: teaData[index].price,
+              price: '\$${teaData[index].price}',
               addCartOnTap: () {
                 _addCart();
               },

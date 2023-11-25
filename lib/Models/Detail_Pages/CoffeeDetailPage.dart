@@ -80,7 +80,7 @@ class _CoffeeDetailState extends State<CoffeeDetail> {
                         ),
                       ),
                       Text(
-                        widget.coffeeDataModel.price,
+                        '\$${widget.coffeeDataModel.price}',
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,

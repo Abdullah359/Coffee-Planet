@@ -25,13 +25,31 @@ class CoffeeDataBuilder extends StatelessWidget {
     "assets/images/coffee_images/espresso.png",
   ];
 
+  static List<String> coffeePrice = [
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+    "22.00",
+  ];
+
+  static List<String> coffeeDesc = [
+    'Description of Coffee',
+    'Description of Coffee',
+    'Description of Coffee',
+    'Description of Coffee',
+    'Description of Coffee',
+    'Description of Coffee',
+  ];
+
   final List<CoffeeDataModel> coffeeData = List.generate(
     coffeeName.length,
     (index) => CoffeeDataModel(
       coffeeName[index],
       coffeeImages[index],
-      '22',
-      'Description of Coffee',
+      coffeePrice[index],
+      coffeeDesc[index],
     ),
   );
 
@@ -57,7 +75,7 @@ class CoffeeDataBuilder extends StatelessWidget {
           return DataListTile(
             imageURL: coffeeData[index].imageUrl,
             title: coffeeData[index].name,
-            price: coffeeData[index].price,
+            price: '\$${coffeeData[index].price}',
             addCartOnTap: () {
               _addCart();
             },
