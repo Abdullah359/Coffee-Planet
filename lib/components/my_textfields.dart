@@ -95,18 +95,14 @@ class _MyPasswordFormFieldState extends State<MyPasswordFormField> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              widget.fieldName,
-              style: GoogleFonts.poppins(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400),
-            ),
+          child: Text(
+            widget.fieldName,
+            style: GoogleFonts.poppins(
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w400),
           ),
         ),
         const SizedBox(
@@ -130,9 +126,10 @@ class _MyPasswordFormFieldState extends State<MyPasswordFormField> {
                   _obscureText = !_obscureText;
                 });
               },
-              child: FaIcon(_obscureText
-                  ? FontAwesomeIcons.eye
-                  : FontAwesomeIcons.eyeSlash),
+              child: FaIcon(
+                _obscureText ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+                color: Colors.brown.shade300,
+              ),
             ),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),

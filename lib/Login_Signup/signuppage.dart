@@ -1,5 +1,5 @@
 import 'package:coffeeplanet/Login_Signup/loginpage.dart';
-import 'package:coffeeplanet/components/my_textfield.dart';
+import 'package:coffeeplanet/components/my_textfields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,8 +28,10 @@ class _SignupPageState extends State<SignupPage> {
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/img1.jpeg'),
-                  fit: BoxFit.cover),
+                image: AssetImage('assets/images/coffee_bg.jpeg'),
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(Colors.grey, BlendMode.dstIn),
+              ),
             ),
             child: Center(
               child: SingleChildScrollView(
