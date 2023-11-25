@@ -2,6 +2,7 @@ import 'package:coffeeplanet/Login_Signup/loginpage.dart';
 import 'package:coffeeplanet/components/my_textfields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignupPage extends StatefulWidget {
@@ -137,12 +138,7 @@ class _SignupPageState extends State<SignupPage> {
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const LoginPage()),
-                                      );
+                                      Get.to(const LoginPage());
                                     },
                                   text: 'Login',
                                   style: GoogleFonts.poppins(

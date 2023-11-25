@@ -1,6 +1,7 @@
 import 'package:coffeeplanet/Login_Signup/signuppage.dart';
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const SplashScreen());
@@ -11,7 +12,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       navigatorKey: GlobalContextService.navigatorKey,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
