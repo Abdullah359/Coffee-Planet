@@ -1,9 +1,9 @@
-import 'package:coffeeplanet/components/coffee_data_list_builder.dart';
-import 'package:coffeeplanet/components/snacks_data_list_builder.dart';
-import 'package:coffeeplanet/components/tea_data_list_builder.dart';
+import 'package:coffeeplanet/components/List_Builders/coffee_data_list_builder.dart';
+import 'package:coffeeplanet/components/List_Builders/tea_data_list_builder.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../components/List_Builders/snacks_data_list_builder.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

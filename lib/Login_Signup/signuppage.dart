@@ -4,8 +4,20 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  final GlobalKey<FormFieldState<String>> _passwordFieldKey =
+      GlobalKey<FormFieldState<String>>();
+
+  String? _password;
+  String? _email;
+  String? _name;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +28,7 @@ class SignupPage extends StatelessWidget {
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/coffee_bg.jpeg'),
+                  image: AssetImage('assets/images/img1.jpeg'),
                   fit: BoxFit.cover),
             ),
             child: Center(
@@ -44,38 +56,51 @@ class SignupPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 // Name Text Field
-                                const MyTextFormField(
-                                    textInputType: TextInputType.name,
-                                    obscureText: false,
-                                    enableSuggestions: true,
-                                    autocorrect: true,
-                                    hintText: 'Enter Your Name',
-                                    fieldName: 'Your Name'),
+                                MyTextFormField(
+                                  textInputType: TextInputType.name,
+                                  enableSuggestions: true,
+                                  autocorrect: true,
+                                  hintText: 'Enter Your Name',
+                                  fieldName: 'Your Name',
+                                  onFieldSubmitted: (String value) {
+                                    setState(() {
+                                      _name = value;
+                                    });
+                                  },
+                                ),
 
                                 const SizedBox(
                                   height: 15,
                                 ),
 
                                 // Email Text Field
-                                const MyTextFormField(
-                                    textInputType: TextInputType.emailAddress,
-                                    obscureText: false,
-                                    enableSuggestions: true,
-                                    autocorrect: true,
-                                    hintText: 'Enter Your Email Address',
-                                    fieldName: 'Email Address'),
+                                MyTextFormField(
+                                  textInputType: TextInputType.emailAddress,
+                                  enableSuggestions: true,
+                                  autocorrect: true,
+                                  hintText: 'Enter Your Email Address',
+                                  fieldName: 'Email Address',
+                                  onFieldSubmitted: (String value) {
+                                    setState(() {
+                                      _email = value;
+                                    });
+                                  },
+                                ),
                                 const SizedBox(
                                   height: 15,
                                 ),
 
                                 // Password Text Field
-                                const MyTextFormField(
-                                    textInputType: TextInputType.text,
-                                    obscureText: true,
-                                    enableSuggestions: false,
-                                    autocorrect: false,
-                                    hintText: 'Enter Your Password',
-                                    fieldName: 'Password'),
+                                MyPasswordFormField(
+                                  fieldKey: _passwordFieldKey,
+                                  fieldName: 'Password',
+                                  hintText: 'Enter Your Password',
+                                  onFieldSubmitted: (String value) {
+                                    setState(() {
+                                      _password = value;
+                                    });
+                                  },
+                                ),
                                 const SizedBox(height: 50),
 
                                 Container(

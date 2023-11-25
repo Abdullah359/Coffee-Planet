@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/coffee_bg.jpeg'),
+                  image: AssetImage('assets/images/img1.jpeg'),
                   fit: BoxFit.cover),
             ),
             child: Center(
@@ -46,7 +46,6 @@ class LoginPage extends StatelessWidget {
                                 // Email Text Field
                                 const MyTextFormField(
                                   textInputType: TextInputType.emailAddress,
-                                  obscureText: false,
                                   enableSuggestions: true,
                                   autocorrect: true,
                                   hintText: 'Enter Your Email Address',
@@ -60,7 +59,6 @@ class LoginPage extends StatelessWidget {
                                 // Password Text Field
                                 const MyTextFormField(
                                   textInputType: TextInputType.text,
-                                  obscureText: true,
                                   enableSuggestions: false,
                                   autocorrect: false,
                                   hintText: 'Enter Your Password',

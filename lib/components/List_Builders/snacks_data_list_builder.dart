@@ -1,8 +1,8 @@
 import 'package:coffeeplanet/components/data_listtile.dart';
 import 'package:flutter/material.dart';
-import '../Models/Data_Models/ProductDataModels.dart';
-import '../Models/Detail_Pages/SnackDetailPage.dart';
-import '../main.dart';
+import '../../Models/Data_Models/ProductDataModels.dart';
+import '../../Models/Detail_Pages/SnackDetailPage.dart';
+import '../../main.dart';
 
 class SnacksDataBuilder extends StatelessWidget {
   SnacksDataBuilder({super.key});
