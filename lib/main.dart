@@ -16,8 +16,7 @@ class SplashScreen extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: EasySplashScreen(
-          logo: Image.asset('assets/images/logo.png', height: 300),
-          backgroundColor: Colors.white,
+          logo: Image.asset('assets/images/logo.png', height: 600),
           showLoader: false,
           durationInSeconds: 3,
           navigator: const SignupPage(),
