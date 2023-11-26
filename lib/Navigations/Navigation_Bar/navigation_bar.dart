@@ -26,11 +26,12 @@ class _NavigationPageState extends State<NavigationPage> {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 15.0, left: 15, right: 15),
+        padding:
+            const EdgeInsets.only(bottom: 9.0, left: 10, right: 10, top: 7),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(40),
           child: NavigationBar(
-              backgroundColor: const Color(0xffe8e8e8),
+              backgroundColor: Colors.grey[300],
               height: 65,
               elevation: 10,
               labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,

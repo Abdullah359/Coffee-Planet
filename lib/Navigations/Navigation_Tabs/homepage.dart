@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
       length: 3,
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: Colors.grey[300],
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Column(children: [
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: Image.asset(
-                      'assets/images/pfp.jpeg',
+                      'assets/images/profile/pfp.jpeg',
                       height: 60,
                       width: 55,
                       fit: BoxFit.cover,
@@ -40,12 +41,13 @@ class HomePage extends StatelessWidget {
                 height: 20,
               ),
               TextField(
+                textCapitalization: TextCapitalization.sentences,
                 enableSuggestions: true,
                 cursorColor: Colors.black,
-                keyboardType: TextInputType.text,
+                keyboardType: TextInputType.name,
                 obscureText: false,
                 decoration: InputDecoration(
-                  fillColor: const Color(0xffe8e8e8),
+                  fillColor: Colors.grey.shade50,
                   filled: true,
                   prefixIcon: const Icon(
                     Icons.search,
@@ -126,8 +128,8 @@ class TabsWidget extends StatelessWidget {
         child: Text(
           title,
           style: GoogleFonts.poppins(
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ),

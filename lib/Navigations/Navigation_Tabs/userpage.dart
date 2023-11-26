@@ -1,6 +1,7 @@
 import 'package:coffeeplanet/Login_Signup/signuppage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserPage extends StatelessWidget {
@@ -26,7 +27,7 @@ class UserPage extends StatelessWidget {
             actions: [
               IconButton(
                   onPressed: () {},
-                  icon: FaIcon(
+                  icon: const FaIcon(
                     FontAwesomeIcons.moon,
                     size: 20,
                     color: Colors.black,
@@ -46,7 +47,7 @@ class UserPage extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(150),
                     child: Image.asset(
-                      'assets/images/pfp.jpeg',
+                      'assets/images/profile/pfp.jpeg',
                       height: 140,
                       width: 140,
                       fit: BoxFit.cover,
@@ -97,12 +98,7 @@ class UserPage extends StatelessWidget {
                     endIcon: false,
                     textColor: Colors.red,
                     onPress: () {
-                      Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SignupPage(),
-                          ),
-                          (_) => false);
+                      Get.offAll(const SignupPage());
                     }),
               ]),
             ),

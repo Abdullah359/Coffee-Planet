@@ -20,16 +20,19 @@ class NotifyPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           centerTitle: true,
           elevation: 0.0),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Lottie.asset('assets/lottie/notification.json'),
-            Text(
-              'Stay Tuned',
-              style: GoogleFonts.poppins(),
-            )
-          ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Lottie.asset('assets/lottie/notification.json'),
+              Text(
+                'Stay Tuned',
+                style: GoogleFonts.poppins(),
+              )
+            ],
+          ),
         ),
       ),
     ));

@@ -1,4 +1,6 @@
+import 'package:coffeeplanet/Login_Signup/signuppage.dart';
 import 'package:coffeeplanet/components/my_textfields.dart';
+import 'package:get/get.dart';
 import '../Navigations/Navigation_Bar/navigation_bar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
               image: DecorationImage(
                 image: AssetImage('assets/images/coffee_bg.jpeg'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.grey, BlendMode.dstIn),
+                colorFilter: ColorFilter.mode(Colors.black, BlendMode.dstIn),
               ),
             ),
             child: Center(
@@ -56,9 +58,10 @@ class _LoginPageState extends State<LoginPage> {
                             // Email Text Field
                             MyTextFormField(
                               textInputType: TextInputType.emailAddress,
+                              capitalization: TextCapitalization.none,
                               enableSuggestions: true,
                               autocorrect: true,
-                              hintText: 'Enter Your Email Address',
+                              hintText: 'Your Email Address',
                               fieldName: 'Email Address',
                               onFieldSubmitted: (String value) {
                                 setState(() {
@@ -74,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                             MyPasswordFormField(
                               fieldKey: _passwordFieldKey,
                               fieldName: 'Password',
-                              hintText: 'Enter Your Password',
+                              hintText: 'Your Password',
                               onFieldSubmitted: (String value) {
                                 setState(() {
                                   _password = value;
@@ -125,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
                             TextSpan(
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  Navigator.pop(context);
+                                  Get.to(const SignupPage());
                                 },
                               text: 'Signup',
                               style: GoogleFonts.poppins(

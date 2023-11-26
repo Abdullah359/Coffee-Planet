@@ -31,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
               image: DecorationImage(
                 image: AssetImage('assets/images/coffee_bg.jpeg'),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.grey, BlendMode.dstIn),
+                colorFilter: ColorFilter.mode(Colors.black, BlendMode.dstIn),
               ),
             ),
             child: Center(
@@ -61,9 +61,10 @@ class _SignupPageState extends State<SignupPage> {
                                 // Name Text Field
                                 MyTextFormField(
                                   textInputType: TextInputType.name,
+                                  capitalization: TextCapitalization.words,
                                   enableSuggestions: true,
                                   autocorrect: true,
-                                  hintText: 'Enter Your Name',
+                                  hintText: 'Your Complete Name',
                                   fieldName: 'Your Name',
                                   onFieldSubmitted: (String value) {
                                     setState(() {
@@ -79,9 +80,10 @@ class _SignupPageState extends State<SignupPage> {
                                 // Email Text Field
                                 MyTextFormField(
                                   textInputType: TextInputType.emailAddress,
+                                  capitalization: TextCapitalization.none,
                                   enableSuggestions: true,
                                   autocorrect: true,
-                                  hintText: 'Enter Your Email Address',
+                                  hintText: 'Your Email Address',
                                   fieldName: 'Email Address',
                                   onFieldSubmitted: (String value) {
                                     setState(() {
@@ -97,7 +99,7 @@ class _SignupPageState extends State<SignupPage> {
                                 MyPasswordFormField(
                                   fieldKey: _passwordFieldKey,
                                   fieldName: 'Password',
-                                  hintText: 'Enter Your Password',
+                                  hintText: 'Your Password',
                                   onFieldSubmitted: (String value) {
                                     setState(() {
                                       _password = value;
@@ -138,7 +140,7 @@ class _SignupPageState extends State<SignupPage> {
                                 TextSpan(
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
-                                      Get.to(const LoginPage());
+                                      Get.back();
                                     },
                                   text: 'Login',
                                   style: GoogleFonts.poppins(

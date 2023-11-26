@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../Models/Data_Models/ProductDataModels.dart';
 import '../../Models/Detail_Pages/CoffeeDetailPage.dart';
 import '../../main.dart';
@@ -55,13 +58,11 @@ class CoffeeDataBuilder extends StatelessWidget {
 
   // Add to Cart
   void _addCart() {
-    ScaffoldMessenger.of(GlobalContextService.navigatorKey.currentContext!)
-        .showSnackBar(
-      const SnackBar(
-        duration: Duration(seconds: 1),
-        content: Text("Added to Cart Successfully!"),
-      ),
-    );
+    Get.defaultDialog(
+        title: 'Cart',
+        middleText: 'Added to cart successfully',
+        middleTextStyle: GoogleFonts.poppins(),
+        titleStyle: GoogleFonts.poppins());
   }
 
   @override
@@ -80,12 +81,8 @@ class CoffeeDataBuilder extends StatelessWidget {
               _addCart();
             },
             navigateOnTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => CoffeeDetail(
-                    coffeeDataModel: coffeeData[index],
-                  ),
-                ),
+              Get.to(
+                CoffeeDetail(coffeeDataModel: coffeeData[index]),
               );
             },
           );

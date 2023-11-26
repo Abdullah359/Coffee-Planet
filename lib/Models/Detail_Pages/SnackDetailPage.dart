@@ -1,6 +1,7 @@
 import 'package:coffeeplanet/Models/Data_Models/ProductDataModels.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../main.dart';
 
@@ -16,14 +17,12 @@ class SnackDetail extends StatefulWidget {
 class _SnackDetailState extends State<SnackDetail> {
   // Add to Cart
   void _addCart() {
-    Navigator.pop(context);
-    ScaffoldMessenger.of(GlobalContextService.navigatorKey.currentContext!)
-        .showSnackBar(
-      const SnackBar(
-        duration: Duration(seconds: 1),
-        content: Text("Added to Cart Successfully!"),
-      ),
-    );
+    Get.back();
+    Get.defaultDialog(
+        title: 'Cart',
+        middleText: 'Added to cart successfully',
+        middleTextStyle: GoogleFonts.poppins(),
+        titleStyle: GoogleFonts.poppins());
   }
 
   // Item initial value

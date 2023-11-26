@@ -21,7 +21,6 @@ class DataListTile extends StatefulWidget {
 }
 
 class _DataListTileState extends State<DataListTile> {
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(

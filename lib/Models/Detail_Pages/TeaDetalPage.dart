@@ -2,7 +2,7 @@ import 'package:coffeeplanet/Models/Data_Models/ProductDataModels.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../main.dart';
+import 'package:get/get.dart';
 
 class TeaDetail extends StatefulWidget {
   final TeaDataModel teaDataModel;
@@ -16,14 +16,12 @@ class TeaDetail extends StatefulWidget {
 class _TeaDetailState extends State<TeaDetail> {
   // Add to Cart
   void _addCart() {
-    Navigator.pop(context);
-    ScaffoldMessenger.of(GlobalContextService.navigatorKey.currentContext!)
-        .showSnackBar(
-      const SnackBar(
-        duration: Duration(seconds: 1),
-        content: Text("Added to Cart Successfully!"),
-      ),
-    );
+    Get.back();
+    Get.defaultDialog(
+        title: 'Cart',
+        middleText: 'Added to cart successfully',
+        middleTextStyle: GoogleFonts.poppins(),
+        titleStyle: GoogleFonts.poppins());
   }
 
   // Item initial value

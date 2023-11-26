@@ -13,7 +13,8 @@ class MyTextFormField extends StatefulWidget {
       this.fieldKey,
       this.onSaved,
       this.validator,
-      this.onFieldSubmitted});
+      this.onFieldSubmitted,
+      required this.capitalization});
 
   final Key? fieldKey;
   final FormFieldSetter<String>? onSaved;
@@ -22,6 +23,7 @@ class MyTextFormField extends StatefulWidget {
   final TextInputType textInputType;
   final bool enableSuggestions, autocorrect;
   final String hintText, fieldName;
+  final TextCapitalization capitalization;
 
   @override
   State<MyTextFormField> createState() => _MyTextFormFieldState();
@@ -49,6 +51,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
           keyboardType: widget.textInputType,
           enableSuggestions: widget.enableSuggestions,
           autocorrect: widget.autocorrect,
+          textCapitalization: widget.capitalization,
           decoration: InputDecoration(
             hintText: widget.hintText,
             hintStyle: GoogleFonts.poppins(color: Colors.white),
