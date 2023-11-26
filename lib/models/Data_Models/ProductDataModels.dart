@@ -1,10 +1,7 @@
 class CoffeeDataModel {
   final String name, imageUrl, price, desc;
-  final String mediumPrice;
-  final String largePrice;
 
-  CoffeeDataModel(this.name, this.imageUrl, this.price, this.desc,
-      this.mediumPrice, this.largePrice);
+  CoffeeDataModel(this.name, this.imageUrl, this.price, this.desc);
 }
 
 class TeaDataModel {
