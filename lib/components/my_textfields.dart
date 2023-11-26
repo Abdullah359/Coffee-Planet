@@ -40,7 +40,7 @@ class _MyTextFormFieldState extends State<MyTextFormField> {
           child: Text(
             widget.fieldName,
             style: GoogleFonts.poppins(
-                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w400),
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),
           ),
         ),
         const SizedBox(
@@ -105,11 +105,11 @@ class _MyPasswordFormFieldState extends State<MyPasswordFormField> {
           child: Text(
             widget.fieldName,
             style: GoogleFonts.poppins(
-                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w400),
+                color: Colors.white, fontSize: 15, fontWeight: FontWeight.w500),
           ),
         ),
         const SizedBox(
-          height: 2,
+          height: 4,
         ),
         TextFormField(
           key: widget.fieldKey,
@@ -135,7 +135,7 @@ class _MyPasswordFormFieldState extends State<MyPasswordFormField> {
                   _obscureText
                       ? FontAwesomeIcons.eye
                       : FontAwesomeIcons.eyeSlash,
-                  color: Colors.brown[300],
+                  color: Colors.brown[400],
                 ),
               ),
             ),
