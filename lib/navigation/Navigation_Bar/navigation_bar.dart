@@ -1,6 +1,6 @@
-import 'package:coffeeplanet/Navigations/Navigation_Tabs/homepage.dart';
-import 'package:coffeeplanet/Navigations/Navigation_Tabs/notifypage.dart';
-import 'package:coffeeplanet/Navigations/Navigation_Tabs/userpage.dart';
+import 'package:coffeeplanet/navigation/Navigation_Tabs/homepage.dart';
+import 'package:coffeeplanet/navigation/Navigation_Tabs/notifypage.dart';
+import 'package:coffeeplanet/navigation/Navigation_Tabs/userpage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../Navigation_Tabs/cartpage.dart';

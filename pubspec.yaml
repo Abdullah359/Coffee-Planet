@@ -37,7 +37,9 @@ dependencies:
   get: ^4.6.6
   lottie: ^2.7.0
   google_fonts: ^6.1.0
+  firebase_core: ^2.23.0
   cupertino_icons: ^1.0.2
+  cloud_firestore: ^4.13.2
   easy_splash_screen: ^1.0.4
   font_awesome_flutter: ^10.6.0
 

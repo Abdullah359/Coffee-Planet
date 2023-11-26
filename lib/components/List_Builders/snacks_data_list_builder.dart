@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../Models/Data_Models/ProductDataModels.dart';
 import '../../Models/Detail_Pages/SnackDetailPage.dart';
-import '../../main.dart';
 
 class SnacksDataBuilder extends StatelessWidget {
   SnacksDataBuilder({super.key});

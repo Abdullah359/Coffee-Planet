@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../Models/Data_Models/ProductDataModels.dart';
 import 'package:get/get.dart';
 import '../../Models/Detail_Pages/TeaDetalPage.dart';
-import '../../main.dart';
 
 class TeaDataBuilder extends StatelessWidget {
   TeaDataBuilder({super.key});

@@ -1,4 +1,4 @@
-import 'package:coffeeplanet/Login_Signup/signuppage.dart';
+import 'package:coffeeplanet/Login_Signup/loginpage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -98,7 +98,7 @@ class UserPage extends StatelessWidget {
                     endIcon: false,
                     textColor: Colors.red,
                     onPress: () {
-                      Get.offAll(const SignupPage());
+                      Get.offAll(const LoginPage());
                     }),
               ]),
             ),

@@ -129,9 +129,14 @@ class _MyPasswordFormFieldState extends State<MyPasswordFormField> {
                   _obscureText = !_obscureText;
                 });
               },
-              child: FaIcon(
-                _obscureText ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
-                color: Colors.brown.shade300,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 14.0),
+                child: FaIcon(
+                  _obscureText
+                      ? FontAwesomeIcons.eye
+                      : FontAwesomeIcons.eyeSlash,
+                  color: Colors.brown[300],
+                ),
               ),
             ),
             focusedBorder: OutlineInputBorder(

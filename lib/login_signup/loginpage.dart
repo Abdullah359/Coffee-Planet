@@ -1,7 +1,7 @@
 import 'package:coffeeplanet/Login_Signup/signuppage.dart';
 import 'package:coffeeplanet/components/my_textfields.dart';
+import 'package:coffeeplanet/navigation/Navigation_Bar/navigation_bar.dart';
 import 'package:get/get.dart';
-import '../Navigations/Navigation_Bar/navigation_bar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

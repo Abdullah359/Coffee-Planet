@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../Models/Data_Models/ProductDataModels.dart';
 import '../../Models/Detail_Pages/CoffeeDetailPage.dart';
-import '../../main.dart';
 import '../data_listtile.dart';
 
 class CoffeeDataBuilder extends StatelessWidget {
