@@ -6,7 +6,17 @@ A new Flutter project.
 
 This project is a starting point for a Flutter Coffee application.
 
-![Mode]()
+![Mode](assets/images/login)
+
+![Mode](assets/images/signup)
+
+![Mode](assets/images/home)
+
+![Mode](assets/images/cart)
+
+![Mode](assets/images/notify)
+
+![Mode](assets/images/user)
 
 A few resources to get you started if this is your first Flutter project:
 
